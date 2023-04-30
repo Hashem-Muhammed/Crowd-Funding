@@ -1,6 +1,6 @@
 import pickle
 import modules
-
+from UserClass import user
 users_file = "Crowd-Funding/Files/users.pk"
 projects_file = "Crowd-Funding/Files/projects.pk"
 
@@ -9,7 +9,7 @@ def save(object):
     myfile = ""
     print("Saving")
     caller = type(object)
-    if caller is modules.User:
+    if caller is user:
         myfile = users_file
     if caller is modules.Project:
         myfile = projects_file
