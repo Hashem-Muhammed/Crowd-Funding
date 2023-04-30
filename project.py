@@ -47,7 +47,7 @@ def fetch_project():
         if obj.title == title:
             return obj
 
-# project_obj=fetch_project()  
+#project_obj=fetch_project()  
 
 def update(project_obj,user):
   
