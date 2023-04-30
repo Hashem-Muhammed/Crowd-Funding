@@ -1,6 +1,7 @@
 from FileManager import *
 
 class project:
+    
     def __init__(self,title,details,target,start_date,end_date,email):
         self.title = title
         self.details = details
@@ -8,6 +9,8 @@ class project:
         self.start_date = start_date
         self.end_date = end_date
         self.email = email
+        self.donated = 0
+        
 
     def __eq__(self, other):
         if isinstance(other, project):
@@ -15,8 +18,10 @@ class project:
         return False    
     
     def __str__(self):
-        return f"({self.title},{self.details},{self.target},{self.start_date},{self.end_date},{self.email})"
+        return f"({self.title},{self.details},{self.target},{self.start_date},{self.end_date},{self.email},{self.donated})"
 
 
 
 
+pro = project("a","b","c","d","e","f")
+print(pro.donated)

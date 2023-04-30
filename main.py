@@ -70,6 +70,12 @@ def search_project():
             ls.append(obj)
     return ls
 
+def fund(obj):
+    donate=int(input("enter the cash amount you want to donate to this project \n"))
+    obj.donated += donate
+    
+    
+
 
 # main loop
 current_user = None
@@ -82,7 +88,8 @@ while True:
     print("5. Edit Project")
     print("6. Delete Project")
     print("7. Search")
-    print("8. Exit")
+    print("8. donate Project")
+    print("9. Exit")
     choice = int(input("Enter choice: "))
 
     if choice == 1:
@@ -118,8 +125,11 @@ while True:
         else:
             for obj in ls:
                 print(obj)
-
     elif choice == 8:
+        project_obj = fetch_project()
+        print(f"this project target is {project_obj.target}")
+        fund(project_obj)
+    elif choice == 9:
         break
     else:
         print("Invalid choice")
