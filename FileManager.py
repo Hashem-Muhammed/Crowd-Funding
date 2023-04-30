@@ -51,8 +51,9 @@ def load_projects():
 
 def save_all(objects, myfile):
     with open(myfile, "wb") as f:
-        for obj in objects:
-            pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+            for obj in objects:
+                if obj is not None:
+                    pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
 def delete(object):
