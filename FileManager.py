@@ -1,6 +1,6 @@
 import pickle
-import modules
 from UserClass import user
+from project import project
 users_file = "Crowd-Funding/Files/users.pk"
 projects_file = "Crowd-Funding/Files/projects.pk"
 
@@ -11,7 +11,7 @@ def save(object):
     caller = type(object)
     if caller is user:
         myfile = users_file
-    if caller is modules.Project:
+    if caller is project:
         myfile = projects_file
 
     if not myfile:
@@ -57,10 +57,10 @@ def save_all(objects, myfile):
 def delete(object):
     myfile = ""
     caller = type(object)
-    if caller is modules.User:
+    if caller is user:
         myfile = users_file
         arr = load_users()
-    if caller is modules.Project:
+    if caller is project:
         myfile = projects_file
         arr = load_projects()
     arr.remove(object)
