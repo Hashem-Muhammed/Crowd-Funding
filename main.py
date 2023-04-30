@@ -68,7 +68,7 @@ while True:
 
     if choice == 1:
         user_1=user()
-        user_1.registeration
+        user_1.registeration()
         save(user_1)
     elif choice == 2:
         arr =load_users()
@@ -93,6 +93,6 @@ while True:
             project_obj=fetch_project()
             delete_project(project_obj,current_user)
     elif choice == 7:
-        break
+        break;
     else:
         print("Invalid choice")
