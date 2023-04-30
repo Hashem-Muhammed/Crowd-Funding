@@ -1,8 +1,9 @@
 import FileManager
 from UserClass import user 
-user_1 = user("hasnm" , "das" , "das" , "das" , "das")
-#user_1.save_user()
-FileManager.save(user_1)
+# user_1 = user()
+# user_1.registeration()
+# FileManager.save(user_1)
+
 arr = FileManager.load_users()
-for el in arr:
-    print(el.f_name)
+logged_in = user.login(arr)
+print(logged_in.f_name)

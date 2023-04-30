@@ -1,8 +1,7 @@
 import re
 
-class user():
-   
-    
+class user:
+ 
     def registeration(self):
         while True:
             name_regex='^[A-Za-z]+(?:\s[A-Za-z]+)*$'
@@ -48,11 +47,24 @@ class user():
                 continue
         
        
-        
-        
-    def login(self):  #it search in the database for the registered user
-        pass
-
+    @staticmethod
+    def login(arr):  #arr from saved file 
+        while True:
+            regex = '^[a-z0-9]+[\._]?[ a-z0-9]+[@]\w+[. ]\w{2,3}$'
+            logEmail=input("please enter your email: ")
+            logPassword=input("please enter your password : ")       
+            if(re.search(regex,logEmail)):
+               for elem in arr:
+                    if elem.email==logEmail and logPassword == elem.password:
+                            print("You have logged in successfully")
+                            #print(f"Hello {elem.f_name} , you have logged in")
+                            return elem
+               else:
+                   print("Invalid email or password")
+                           
+    def __eq__(self, other):
+        return self.f_name==other.f_name and self.email == other.email    
+         
 
 
 
