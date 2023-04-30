@@ -2,7 +2,7 @@ from FileManager import *
 import re
 import datetime
 class project:
-    def __init__(self,title,details,target,start_date,end_date, email):
+    def __init__(self,title,details,target,start_date,end_date,email):
         self.title = title
         self.details = details
         self.target = target
@@ -14,6 +14,9 @@ class project:
         if isinstance(other, project):
             return self.title == other.title and self.details == other.details and self.target == other.target and self.start_date == other.start_date and self.end_date == other.end_date and self.creator == other.creator
         return False    
+    
+    def __str__(self):
+        return f"({self.title},{self.details},{self.target},{self.start_date},{self.end_date},{self.email})"
 
 def create_project():
     t=input("enter project title:\n")
@@ -30,7 +33,7 @@ def create_project():
     c=input("enter project creator email :\n")
     project_1=project(t,d,t2,s,e,c) 
     save(project_1)
-    return project_1  
+     
     
     
     
@@ -44,7 +47,7 @@ def fetch_project():
         if obj.title == title:
             return obj
 
-project_obj=fetch_project()  
+# project_obj=fetch_project()  
 
 def update(project_obj,user):
   
