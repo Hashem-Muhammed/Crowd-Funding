@@ -86,8 +86,6 @@ while True:
     choice = int(input("Enter choice: "))
 
     if choice == 1:
-        user_1=user()
-        user_1.registeration()
         user_1 = user()
         user_1.registeration()
         save(user_1)
@@ -114,6 +112,14 @@ while True:
             project_obj = fetch_project()
             delete_project(project_obj, current_user)
     elif choice == 7:
-        break;
+        ls = search_project()
+        if len(ls) == 0:
+            print("No projects found")
+        else:
+            for obj in ls:
+                print(obj)
+
+    elif choice == 8:
+        break
     else:
         print("Invalid choice")
