@@ -2,14 +2,14 @@ from FileManager import *
 
 class project:
     
-    def __init__(self,title,details,target,start_date,end_date,email):
+    def __init__(self,title,details,target,start_date,end_date,email,donated=0):
         self.title = title
         self.details = details
         self.target = target
         self.start_date = start_date
         self.end_date = end_date
         self.email = email
-        self.donated = 0
+        self.donated = donated
         
 
     def __eq__(self, other):

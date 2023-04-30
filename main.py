@@ -73,6 +73,8 @@ def search_project():
 def fund(obj):
     donate=int(input("enter the cash amount you want to donate to this project \n"))
     obj.donated += donate
+    newObj = project(obj.title,obj.details,obj.target,obj.start_date,obj.end_date,obj.email,obj.donated)
+    edit(obj,newObj)
     
     
 

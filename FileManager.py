@@ -19,8 +19,9 @@ def save(object):
         raise Exception("Undefined caller")
 
     with open(myfile, "ab") as f:
-        pickle.dump(object, f, pickle.HIGHEST_PROTOCOL)
-        print("Saved to %s" % myfile)
+        if object is not None:
+            pickle.dump(object, f, pickle.HIGHEST_PROTOCOL)
+            print("Saved to %s" % myfile)
 
 
 def load_users():
